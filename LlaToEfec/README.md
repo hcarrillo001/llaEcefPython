@@ -17,3 +17,6 @@ for a binary search can be used later in the program
   
 NOTE: A LOT OF DEBUG COMMENTS/PRINT STATEMENTS WERE LEFT
 TO SHOW DEVELOPMENT PROCESS.
+
+## Testing 
+     Testing was done using PyTest 
