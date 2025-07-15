@@ -6,8 +6,8 @@ from EcefVelocity import EcefVelocity
 from LLaCoordinate import LLaCoordinate
 
 # Constants
-a = 6378137.0                  # semi-major axis
-b = 6356752.31424518           # semi-minor axis
+a = 6378137.0                  # semi-major axis (equatorial distance)
+b = 6356752.31424518           # semi-minor axis (polar radius)
 
 
 # First eccentricity (e1)
@@ -120,9 +120,9 @@ def covert_lla_to_ecef(lla_coordinatesList):
             raise ValueError("Invalid Longitude: range is -180.0 to 180.0")
 
         # Constants (redefine if not globally available)
-        a = 6378137.0                     # semi-major axis
-        b = 6356752.31424518              # semi-minor axis
-        e1 = math.sqrt((a**2 - b**2) / a**2)
+        #a = 6378137.0                     # semi-major axis
+        #b = 6356752.31424518              # semi-minor axis
+        #e1 = math.sqrt((a**2 - b**2) / a**2)
 
         # Convert degrees to radians
         latRad = math.radians(lat)
@@ -148,7 +148,9 @@ def calculate_ecef_velocities(ecef_coordinates):
     ecef_velocities = []
 
     first_velocity_epochTime = ecef_coordinates[0].get_epoch_time()
-    ecef_velocities.append(EcefVelocity(0, 0, 0, first_velocity_epochTime))
+    ecef_velocities.append(EcefVelocity(0, 0, 0,0,0,0,
+                                        ecef_coordinates[0].get_x(), ecef_coordinates[0].get_y(),ecef_coordinates[0].get_z(),
+                                        0,first_velocity_epochTime))
 
     #loop that uses a range from 1 to ecef_coordinates length (size)
     #Start at index 1 because the first ecef velocity will be (0,0,0) vx,vy,vz
