@@ -222,9 +222,9 @@ def calculate_interpolating_velocities(ecef_velocities, epoch_time):
 
         if mid_time == epoch_time:           #epoch time found
             return ecef_velocities[mid]
-        elif mid_time < epoch_time:          #left of the list
+        elif mid_time < epoch_time:          #left of the right
             low = mid + 1
-        else:                               #right of the list
+        else:                               #right of the left
             high = mid - 1
 
     # low is the first index greater than the target
