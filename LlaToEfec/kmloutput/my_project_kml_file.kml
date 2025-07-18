@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <open>1</open>
+        <Placemark id="3">
+            <name>A Sloped Line</name>
+            <LineString id="2">
+                <extrude>1</extrude>
+                <altitudeMode>relativeToGround</altitudeMode>
+                <coordinates>-75.0,0.0,0.0 -74.999,0.002,2393.351800554017 -74.998,0.004,4520.775623268698 -74.997,0.006,6382.271468144044 -74.996,0.008,7977.839335180056 -74.995,0.01,9307.479224376732 -74.994,0.012,10371.191135734072 -74.993,0.014,11168.975069252077 -74.992,0.016,11700.831024930749 -74.991,0.018000000000000002,11966.759002770083 -74.99,0.02,11966.759002770083 -74.989,0.022,11700.831024930749 -74.988,0.024,11168.975069252077 -74.987,0.026000000000000002,10371.191135734072 -74.986,0.028,9307.479224376732 -74.985,0.03,7977.839335180056 -74.984,0.032,6382.271468144044 -74.983,0.034,4520.775623268698 -74.982,0.036000000000000004,2393.351800554017 -74.981,0.038,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="5">
+            <name>Starting Point</name>
+            <Point id="4">
+                <coordinates>-75.0,-75.0,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="7">
+            <name>Mid Point</name>
+            <Point id="6">
+                <coordinates>-74.999,-74.999,2393.351800554017</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="9">
+            <name>Ending Point</name>
+            <Point id="8">
+                <coordinates>-74.998,-74.998,4520.775623268698</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>
