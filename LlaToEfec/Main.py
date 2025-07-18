@@ -1,5 +1,6 @@
 import math
 import sys
+import simplekml
 
 from EcefCoordinate import EcefCoordinate
 from EcefVelocity import EcefVelocity
@@ -18,8 +19,8 @@ e2 = math.sqrt((a**2 - b**2) / b**2)
 
 
 def main():
-    file_path = "resources/data2.csv"
-    #file_path = "resources/data.csv"
+    file_path = "resources/data4.csv"
+    #file_path = "resources/projectile_data_100_entries.csv"
     lla_coordinates_list = read_data_from_file(file_path)
 
     # https://docs.python.org/3/howto/sorting.html
@@ -65,6 +66,32 @@ def main():
         print("Vy: ", interpolating_velocity.vy, "meters/sec")
         print("Vz: ", interpolating_velocity.vz, "meters/sec")
         print("")
+
+    create_kml_file(lla_coordinates_list)
+
+
+
+def create_kml_file(lla_coordinates_list):
+    # Create an instance of Kml
+    kml = simplekml.Kml(open=1)
+
+    #convert list of coordinates to tuples
+    coordinate_tuples = []
+    for coordinate_object in lla_coordinates_list:
+        coordinatetuple = (coordinate_object._lat_degree, coordinate_object._lon_degree,coordinate_object._altitude_meters)
+        coordinate_tuples.append(coordinatetuple)
+
+
+    linestring = kml.newlinestring(name="A Sloped Line")
+    linestring.coords = coordinate_tuples
+    linestring.altitudemode = simplekml.AltitudeMode.relativetoground
+    linestring.extrude = 1
+
+    #Adding placemarkers
+    kml.newpoint(name="Starting Point", coords=[(lla_coordinates_list[0]._lat_degree, lla_coordinates_list[0]._lat_degree, lla_coordinates_list[0]._altitude_meters)])
+
+    # Save the KML file
+    kml.save("kmloutput/my_project_kml_file.kml")
 
 
 #note to self, stip() removes whitespace

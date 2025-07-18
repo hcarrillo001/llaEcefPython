@@ -1,12 +1,13 @@
 import pytest
 
-from LlaToEfec.EcefCoordinate import EcefCoordinate
-from LlaToEfec.EcefVelocity import EcefVelocity
-from LlaToEfec.LLaCoordinate import LLaCoordinate
-from LlaToEfec.Main import covert_lla_to_ecef, calculate_ecef_velocities, calculate_interpolating_velocities
+from EcefCoordinate import EcefCoordinate
+from EcefVelocity import EcefVelocity
+from LLaCoordinate import LLaCoordinate
+from Main import covert_lla_to_ecef, calculate_ecef_velocities, calculate_interpolating_velocities
 
 
 #test
+
 
 def test_convert_lla_to_ecef():
     epochTime = 1532332859.04
