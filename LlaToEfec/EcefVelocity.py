@@ -1,5 +1,5 @@
 class EcefVelocity:
-    def __init__(self, vx, vy, vz, x1=0, y1=0, z1=0, x2=0, y2=0, z2=0, delta_time=0, epochTime=0):
+    def __init__(self, vx, vy, vz, x1, y1, z1, x2, y2, z2, delta_time, epochTime):
         self.vx = vx
         self.vy = vy
         self.vz = vz
